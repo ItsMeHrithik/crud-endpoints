@@ -23,6 +23,15 @@ mongoose
 //Using routes
 app.use("/api/todos", todos);
 
+app.get("/:email", (req, res) => {
+  const email = req.params.email;
+  if (!email) {
+    res.status(400).json("send an email parameter");
+  } else {
+    res.status(200).json(`the email id is ${email}`);
+  }
+});
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server Running on port ${port}`));
