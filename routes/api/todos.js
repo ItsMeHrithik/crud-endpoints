@@ -29,11 +29,9 @@ router.post("/create", (req, res) => {
 router.get("/alltodos", (req, res) => {
   Todo.find()
     .then((todos) => {
-      if (!todo) {
-        res.status(400).json("no todos found create one because its empty");
-      } else {
+      
         res.status(200).json(todos);
-      }
+    
     })
     .catch((err) => console.log(err));
 });
