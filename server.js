@@ -23,8 +23,8 @@ mongoose
 //Using routes
 app.use("/api/todos", todos);
 
-app.get("/:email", (req, res) => {
-  const email = req.params.email;
+app.get("/", (req, res) => {
+  const email = req.query.email;
   if (!email) {
     res.status(400).json("send an email parameter");
   } else {
